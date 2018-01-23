@@ -12,6 +12,7 @@ buildscript {
         // in the individual module build.gradle files
         classpath 'com.novoda:bintray-release:0.4.0'
         //我修复了一个bug，这里是修改的地方
+        //我又修复了一个bug，这里是修改的地方
     }
 }
 
