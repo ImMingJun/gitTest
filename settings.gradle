@@ -1,1 +1,1 @@
-include ':app', ':xinhuasdk', ':picture_library'
+include ':app', ':xinhuasdk', ':picture_library'//我在2.3新改了一个bug
