@@ -1,5 +1,5 @@
 ext {
-
+//我在3.0改的第三个bug。。。提交
     android = [
             compileSdkVersion: 26,
             buildToolsVersion: "26.0.1",
