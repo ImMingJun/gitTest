@@ -4,7 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/android_reflect-master-56537f097673cd3f88b5aac872e75d6424ebaabd.iml" filepath="$PROJECT_DIR$/android_reflect-master-56537f097673cd3f88b5aac872e75d6424ebaabd.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gitTest.iml" filepath="$PROJECT_DIR$/gitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/picture_library/picture_library.iml" filepath="$PROJECT_DIR$/picture_library/picture_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/picture_library/picture_library.iml" filepath="$PROJECT_DIR$/picture_library/picture_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xinhuasdk/xinhuasdk.iml" filepath="$PROJECT_DIR$/xinhuasdk/xinhuasdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/xinhuasdk/xinhuasdk.iml" filepath="$PROJECT_DIR$/xinhuasdk/xinhuasdk.iml" />
     </modules>
   </component>
