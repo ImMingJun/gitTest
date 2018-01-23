@@ -1,0 +1,73 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+
+    defaultConfig {
+
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    def viewDependencies = rootProject.ext.viewDependencies
+    def dataDependencies = rootProject.ext.dataDependencies
+    compile viewDependencies.ijkplayer_java
+    compile viewDependencies.ijkplayer_exo
+    compile viewDependencies.transitionseverywhere
+    compile dataDependencies.videocache
+//    compile project.ext.androidDependencies.appcompat_v7
+
+    def androidDependencies = rootProject.ext.androidDependencies
+    apt viewDependencies.apt_butterKnife
+    compile viewDependencies.butterKnife
+    compile androidDependencies.recyclerView
+    compile viewDependencies.DanmakuFlameMaster
+    compile viewDependencies.ndkbitmap_armv7a
+    compile viewDependencies.ndkbitmap_armv5
+    compile viewDependencies.ndkbitmap_x86
+    compile androidDependencies.support_v4
+
+    compile "com.android.support:appcompat-v7:${rootProject.ext.android["buildToolsVersion"]}"
+
+
+
+
+}
+
+//apply from: '../bintray.gradle'

@@ -1,0 +1,199 @@
+apply plugin: 'com.android.library'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    useLibrary 'org.apache.http.legacy'
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField("String", "WEIXIN_APPID", "\"${WEIXIN_APPID}\"");
+        buildConfigField("String", "WEIXIN_APPSECRET", "\"${WEIXIN_APPSECRET}\"");
+        buildConfigField("String", "QQ_APPID", "\"${QQ_APPID}\"");
+        buildConfigField("String", "QQ_APPKEY", "\"${QQ_APPKEY}\"");
+        buildConfigField("String", "WEIBO_APPKEY", "\"${WEIBO_APPKEY}\"");
+        buildConfigField("String", "WEIBO_APPSECRET", "\"${WEIBO_APPSECRET}\"");
+        buildConfigField("String", "WEIBO_CALLBACK", "\"${WEIBO_CALLBACK}\"");
+        buildConfigField("String", "BUGLY_APPID", "\"${BUGLY_APPID}\"");
+        buildConfigField("String", "FACEBOOK_APPKEY", "\"${FACEBOOK_APPKEY}\"");
+        buildConfigField("String", "FACEBOOK_APPSECRET", "\"${FACEBOOK_APPSECRET}\"");
+        buildConfigField("String", "TWITTER_APPKEY", "\"${TWITTER_APPKEY}\"");
+        buildConfigField("String", "TWITTER_APPSECRET", "\"${TWITTER_APPSECRET}\"");
+
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a","arm64-v8a","mips","mips64","x86","x86_64"
+        }
+
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "${GETUI_APP_ID}",
+                GETUI_APP_KEY   : "${GETUI_APP_KEY}",
+                GETUI_APP_SECRET: "${GETUI_APP_SECRET}"
+        ]
+
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs =  ['libs']
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile project(':picture_library')
+//    compile 'mobile.xinhuamm:picture_library:1.0.4'
+
+    //support
+    compile(rootProject.ext.dependencies["support-v4"]) {
+        exclude module: 'support-annotations'
+    }
+    compile(rootProject.ext.dependencies["appcompat-v7"]) {
+        exclude module: 'support-annotations'
+        exclude module: 'support-v4'
+    }
+    compile(rootProject.ext.dependencies["design"]) {
+        exclude module: 'support-annotations'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
+    compile rootProject.ext.dependencies["annotations"]
+
+    //view
+    compile(rootProject.ext.dependencies["butterknife"]) {
+        exclude module: 'support-annotations'
+    }
+    compile(rootProject.ext.dependencies["cardview-v7"]) {
+        exclude module: 'support-annotations'
+    }
+    compile rootProject.ext.dependencies["recyclerview-v7"]
+    compile rootProject.ext.dependencies["annotations"]
+    compile rootProject.ext.dependencies["circleimageview"]
+    compile rootProject.ext.dependencies["SmartRefreshLayout"]
+    compile rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    compile rootProject.ext.dependencies["glide-transformations"]
+    compile rootProject.ext.dependencies["gpuimage"]
+    compile rootProject.ext.dependencies["ConvenientBanner"]
+    compile rootProject.ext.dependencies["EasyPopup"]
+
+    //rx
+    compile(rootProject.ext.dependencies["rxcache2"]) {
+        exclude module: 'rxjava'
+        exclude module: 'dagger'
+    }
+    compile(rootProject.ext.dependencies["rxcache2-jolyglot-gson"]) {
+        exclude module: 'gson'
+    }
+    compile(rootProject.ext.dependencies["rxlifecycle2"]) {
+        exclude module: 'rxjava'
+        exclude module: 'jsr305'
+    }
+    compile(rootProject.ext.dependencies["rxlifecycle2-components"]) {
+        exclude module: 'support-v4'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-annotations'
+        exclude module: 'rxjava'
+        exclude module: 'rxandroid'
+        exclude module: 'rxlifecycle'
+    }
+    compile(rootProject.ext.dependencies["rxpermissions2"]) {
+        exclude module: 'rxjava'
+        exclude module: 'support-annotations'
+    }
+    compile(rootProject.ext.dependencies['rxerrorhandler2']) {
+        exclude module: 'rxjava'
+        exclude module: 'appcompat-v7'
+    }
+    compile(rootProject.ext.dependencies['rxdownload2'])
+
+    //network
+    compile(rootProject.ext.dependencies["retrofit2"]) {
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+    }
+    compile(rootProject.ext.dependencies["retrofit2-converter-gson"]) {
+        exclude module: 'gson'
+        exclude module: 'okhttp'
+        exclude module: 'okio'
+        exclude module: 'retrofit'
+    }
+    compile(rootProject.ext.dependencies["retrofit2-adapter-rxjava2"]) {
+        exclude module: 'rxjava'
+        exclude module: 'okhttp'
+        exclude module: 'retrofit'
+        exclude module: 'okio'
+    }
+    compile rootProject.ext.dependencies["okhttp3"]
+    compile(rootProject.ext.dependencies["glide"]) {
+        exclude module: 'support-v4'
+    }
+    annotationProcessor(rootProject.ext.dependencies["glide-compiler"]) {
+        exclude module: 'jsr305'
+    }
+    compile rootProject.ext.dependencies["stetho"]
+    compile rootProject.ext.dependencies["stetho-okhttp3"]
+
+    compile rootProject.ext.dependencies["FlycoTabLayout_Lib"]
+    compile rootProject.ext.dependencies["tencent-bugly"]
+
+    //tools
+    provided rootProject.ext.dependencies["javax.annotation"]
+    compile rootProject.ext.dependencies["dagger2"]
+    annotationProcessor(rootProject.ext.dependencies["dagger2-compiler"]) {
+        exclude module: 'dagger'
+    }
+    compile rootProject.ext.dependencies["androideventbus"]
+    compile rootProject.ext.dependencies["gson"]
+    compile rootProject.ext.dependencies["multidex"]
+    compile rootProject.ext.dependencies["getui"]
+
+    //test
+    compile rootProject.ext.dependencies["timber"]
+    testCompile rootProject.ext.dependencies["junit"]
+}
+
+publish {
+    artifactId = 'xinhuasdk'//项目名称
+    userOrg = rootProject.userOrg//bintray.com用户名
+    groupId = rootProject.groupId//jcenter上的路径
+    publishVersion = rootProject.publishVersion//版本号
+    desc = rootProject.desc
+    website =rootProject.website
+}
