@@ -113,8 +113,8 @@ public class MaterialActivity extends HBaseActivity<MaterialPresenter> implement
 
     @Override
     protected void initWidget(Bundle savedInstanceState) {
-        mToolbar.setTitle("");
-        mToolbar.setSubtitle("");
+        mToolbar.setTitle("1111111111111111111");
+        mToolbar.setSubtitle("2222222222222222222");
 //        mToolbar.setNavigationIcon(R.mipmap.ic_launcher);
         setSupportActionBar(mToolbar);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
