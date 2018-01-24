@@ -58,7 +58,7 @@ public class MyHomeActivity extends HBaseActivity<MyHomePresenter> implements My
     @Override
     public void initData(Bundle savedInstanceState) {
         //以下代码可以处理内存被杀时，fragment恢复的问题，不至于多建几个fragment.
-        //fragment_login改成你自己取的变量
+        //fragment_login改成你自己取的变量55555555555555555555555555555555555555555555555555555555555555555
 //        mFragment = findFragment(MyHomeFragment.class.getName());
 //        if (mFragment == null) {
 //            addFragment(R.id.fragment_login, MyHomeFragment.newInstance(), MyHomeFragment.class.getName());
