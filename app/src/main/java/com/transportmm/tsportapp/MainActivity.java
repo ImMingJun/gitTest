@@ -96,7 +96,7 @@ public class MainActivity extends HBaseActivity implements NavigationView.OnNavi
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
 
-                // 主体窗口
+                // 主体窗口-----------------------------------------555555555555555555555555
                 View mainFrame = mDrawerLayout.getChildAt(0);
 
                 // 这个就是隐藏起来的边侧滑菜单栏
