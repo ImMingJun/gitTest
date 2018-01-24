@@ -19,8 +19,6 @@ import com.transportmm.tsportapp.mvp.contract.mycontract.MySplashContract;
 import com.transportmm.tsportapp.mvp.model.entity.MySplashResult;
 import com.transportmm.tsportapp.mvp.presenter.mypresenter.MySplashPresenter;
 import com.transportmm.tsportapp.mvp.ui.myui.adapter.MySplashRecycleViewAdapter;
-import com.umeng.socialize.ShareAction;
-import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.xinhuamm.xinhuasdk.base.activity.HBaseActivity;
 import com.xinhuamm.xinhuasdk.di.component.AppComponent;
 import com.xinhuamm.xinhuasdk.utils.UiUtils;
@@ -95,7 +93,6 @@ public class MySplashActivity extends HBaseActivity<MySplashPresenter> implement
                     case 1:
                         Snackbar.make(toolbar.getRootView(), "设置", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
-                        new ShareAction(MySplashActivity.this).withText("hello").setDisplayList(SHARE_MEDIA.QQ,SHARE_MEDIA.QZONE,SHARE_MEDIA.SMS).open();
                         break;
                     case 2:
                         Snackbar.make(toolbar.getRootView(), "options", Snackbar.LENGTH_LONG)
