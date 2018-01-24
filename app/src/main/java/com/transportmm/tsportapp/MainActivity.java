@@ -71,7 +71,7 @@ public class MainActivity extends HBaseActivity implements NavigationView.OnNavi
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action-------------------------33333333333333333333333", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                        .setAction("Action--------------------44444444444444444", null).show();
             }
         });
 
