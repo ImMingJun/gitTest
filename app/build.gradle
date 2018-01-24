@@ -26,6 +26,7 @@ android {
                 GETUI_APP_KEY   : "${GETUI_APP_KEY}",
                 GETUI_APP_SECRET: "${GETUI_APP_SECRET}"
         ]
+        multiDexEnabled true
 
     }
 
@@ -106,6 +107,7 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
+
 }
 
 def getVersionCode() {
@@ -147,4 +149,11 @@ dependencies {
     androidTestCompile 'junit:junit:4.12'
     compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
     compile files('dom4j-1.6.1.jar')
+    compile files('E:/Android/AndroidStudioProjectLocation/GitHub/gitTest/umeng_integratetool_result/libs/open_sdk_r5923_lite.jar')
+    compile files('E:/Android/AndroidStudioProjectLocation/GitHub/gitTest/umeng_integratetool_result/libs/SocialSDK_QQ_Full.jar')
+    compile files('E:/Android/AndroidStudioProjectLocation/GitHub/gitTest/umeng_integratetool_result/libs/umeng_shareboard_widget.jar')
+    compile files('E:/Android/AndroidStudioProjectLocation/GitHub/gitTest/umeng_integratetool_result/libs/umeng_social_api.jar')
+    compile files('E:/Android/AndroidStudioProjectLocation/GitHub/gitTest/umeng_integratetool_result/libs/umeng_social_net.jar')
+    compile files('E:/Android/AndroidStudioProjectLocation/GitHub/gitTest/umeng_integratetool_result/libs/umeng_social_shareboard.jar')
+    compile files('E:/Android/AndroidStudioProjectLocation/GitHub/gitTest/umeng_integratetool_result/libs/umeng_social_tool.jar')
 }
