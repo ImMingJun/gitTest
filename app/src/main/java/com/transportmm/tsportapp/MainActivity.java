@@ -1,9 +1,7 @@
 package com.transportmm.tsportapp;
 
-import android.*;
 import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -41,7 +39,7 @@ import timber.log.Timber;
 public class MainActivity extends HBaseActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG=MainActivity.class.getName();
-    //是否关闭侧滑导航
+    //是否关闭侧滑导航------------------------11111111111111111111111111111111111111
     private static final boolean DRAWER_MODE_CLOSED = false;
     @BindView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
@@ -53,7 +51,7 @@ public class MainActivity extends HBaseActivity implements NavigationView.OnNavi
     private long mBackPressedTime;
     private RxPermissions rxPermissions;
 
-    // DemoPushService.class 自定义服务名称, 核心服务
+    // DemoPushService.class 自定义服务名称, 核心服务------------------------------------------------2222222222222222222222222
     private Class userPushService = GetuiPushService.class;
 
     @Override
@@ -72,7 +70,7 @@ public class MainActivity extends HBaseActivity implements NavigationView.OnNavi
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Replace with your own action-------------------------33333333333333333333333", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
