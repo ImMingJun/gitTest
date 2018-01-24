@@ -91,11 +91,11 @@ public class MySplashActivity extends HBaseActivity<MySplashPresenter> implement
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getOrder()){
                     case 1:
-                        Snackbar.make(toolbar.getRootView(), "设置", Snackbar.LENGTH_LONG)
+                        Snackbar.make(toolbar.getRootView(), "设置---bug1", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                         break;
                     case 2:
-                        Snackbar.make(toolbar.getRootView(), "options", Snackbar.LENGTH_LONG)
+                        Snackbar.make(toolbar.getRootView(), "options---bug2", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                         break;
                     case 3:
@@ -123,11 +123,11 @@ public class MySplashActivity extends HBaseActivity<MySplashPresenter> implement
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "返回", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "返回---bug3", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
-        toolbar.setTitle("CoordinatorLayout");
+        toolbar.setTitle("CoordinatorLayout---bug4");
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
         mySplashRecycleViewAdapter = new MySplashRecycleViewAdapter(this,mySplashResults);
